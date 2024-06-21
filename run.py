@@ -70,3 +70,35 @@ class Ships:
                     hits += 1
         return hits
 
+def Game():
+    computer_board = Boards(([" "] * 10 for i in range(10)))
+    guess_board = Boards(([" "] * 10 for i in range(10)))
+    Ships.create_ships(computer_board)
+    turns = 10
+    while turns > 0:
+        Boards.print_board(guess_board)
+        user_x_row, user_y_column = Ships.user_input(object)
+        while guess_board.board[user_x_row][user_y_column] == "O" or guess_board.board[user_x_row][user_y_column] == "X":
+            print("You have guessed this co-ordinate already.")
+            user_x_row, user_y_column = Ships.user_input(object)
+                
+        if computer_board.board[user_x_row][user_y_column] == "X":
+            print("Direct hit! Enemy battleship sunk!")
+            guess_board.board[user_x_row][user_y_column] = "X"
+        else:
+            print("Miss! Select new co-ordinates and try again.")
+            guess_board.board[user_x_row][user_y_column] = "O"
+            
+        if Ships.count_hits(guess_board) == 7:
+            print("You hit all 7 ships! You win!")
+            break
+        elif turns == 0:
+            print("You ran out of shells(turns). You lost!")
+            Boards.print_board(guess_board)
+            break
+        else:
+            turns -= 1
+            print(f"You have {turns} turns remaining.")
+                
+                
+Game()
