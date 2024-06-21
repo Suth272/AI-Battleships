@@ -87,15 +87,15 @@ def PlayGame():
     """
     Grid checking and changing/appending.
     """  
+    while user_board.board[user_x][user_y] == "O" or user_board.board[user_x][user_y] == "X":
+      print("You have guessed this co-ordinate already.")
+      user_x, user_y = Ships.user_input(object)
     if computer_board.board[user_x][user_y] == "X":
       print("Direct hit! Enemy battleship sunk!")
       user_board.board[user_x][user_y] = "X"
     else:
       print("Miss! Select new co-ordinates and try again.")
       user_board.board[user_x][user_y] = "O"
-    while user_board.board[user_x][user_y] == "O" or user_board.board[user_x][user_y] == "X":
-      print("You have guessed this co-ordinate already.")
-      user_x, user_y = Ships.user_input(object)
       
     """
     Checking for win and lose conditons.
