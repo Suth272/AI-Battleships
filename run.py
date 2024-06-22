@@ -1,5 +1,6 @@
 import random
 
+
 class Boards:
   """
   Creates boards for the User and the Computer.
@@ -24,6 +25,8 @@ class Boards:
     for row in self.board:
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
+
+
 class Ships:
   """
   This class handles the placement of the ships by the computer, handles the user's inputs on their chosen co-ordinates, as well as counting the number of ships that were hit.
@@ -72,6 +75,7 @@ class Ships:
           hit_ships += 1
     return hit_ships
 
+
 def PlayGame():
   """
   This function starts and loops the game till the user runs out of turns.
@@ -108,5 +112,6 @@ def PlayGame():
     else:
       turns -= 1
       print(f"You have {turns} turns remaining.")
+
 
 PlayGame()
