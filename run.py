@@ -76,7 +76,6 @@ def PlayGame():
   """
   This function starts and loops the game till the user runs out of turns.
   """ 
-  print('test')
   computer_board = Boards([[" "] * 5 for i in range(5)])
   user_board = Boards([[" "] * 5 for i in range(5)])
   Ships.create_ships(computer_board)
@@ -88,9 +87,7 @@ def PlayGame():
     """
     Grid checking and changing/appending.
     """  
-    while user_board.board[user_x][user_y] == "O" or user_board.board[user_x][user_y] == "X":
-      print("You have guessed this co-ordinate already.")
-      user_x, user_y = Ships.user_input(object)
+    
     if computer_board.board[user_x][user_y] == "X":
       print("Direct hit! Enemy battleship sunk!")
       user_board.board[user_x][user_y] = "X"
