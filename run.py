@@ -39,10 +39,10 @@ class Ships:
     Creates 5 random ships for the Computer board.
     """
     for i in range(5):
-      self.x_row, self.y_column = random.randint(0, 4), random.randint(0, 4)
-      while self.board[self.x_row][self.y_column] == "X":
-        self.x_row, self.y_column = random.randint(0, 4), random.randint(0, 4)
-      self.board[self.x_row][self.y_column] = "X"
+      self.x, self.y = random.randint(0, 4), random.randint(0, 4)
+      while self.board[self.x][self.y] == "X":
+        self.x, self.y = random.randint(0, 4), random.randint(0, 4)
+      self.board[self.x][self.y] = "X"
     return self.board
 
   def user_input(self):
@@ -61,7 +61,7 @@ class Ships:
           y = input("Enter the column letter of the ship: ").upper()
       return int(x) - 1, Boards.translate_letters_to_numbers()[y]
     except ValueError and KeyError:
-      print("Not a valid input")
+      print("Inalid input")
       return self.user_input()
 
   def count_hits(self):
@@ -91,7 +91,9 @@ def PlayGame():
     """
     Grid checking and changing/appending.
     """  
-    
+    while user_board.board[user_x][user_y] == "O" or user_board.board[user_x][user_y] == "X":
+      print("You have guessed this co-ordinate already.")
+      user_x, user_y = Ships.user_input(object)
     if computer_board.board[user_x][user_y] == "X":
       print("Direct hit! Enemy battleship sunk!")
       user_board.board[user_x][user_y] = "X"
