@@ -76,6 +76,7 @@ def PlayGame():
   """
   This function starts and loops the game till the user runs out of turns.
   """ 
+  print('test')
   computer_board = Boards([[" "] * 5 for i in range(5)])
   user_board = Boards([[" "] * 5 for i in range(5)])
   Ships.create_ships(computer_board)
