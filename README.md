@@ -52,11 +52,9 @@ If the guess misses, the co-ordinate that the player guessed will be marked with
 - Have ships take up more than a 1x1 grid space.
 
 ##  Data Model
-My project uses a Board class and a Ships class as my model. The game creates two instances of the board class. First to create a board that is hidden from the player and contains the computer's ships that have been randomly generated. Secondly to create an empty board that is used by the player to make guesses of where the AI battleships are. 
+My project uses a Board class as my model. The game creates two instances of the board class. First to create a board that is hidden from the player and contains the computer's ships that have been randomly generated. Secondly to create an empty board that is used by the player to make guesses of where the AI battleships are. 
 
-The Board class has a print method to help play the game, but is mainly used to store the guesses of the player and where the computer's ships are. 
-
-The Ship class is used randomly generate the computer's ships on the board, plots the user's inputs on to the guess grid and keeps track of the ships that have been hit.
+The Board class has a print method to help play the game, but is mainly used to store the guesses of the player and where the computer's ships are. The class is also used randomly generate the computer's ships on the board, plots the user's inputs on to the guess grid and keeps track of the ships that have been hit.
 
 ## Testing
 This site has been tested in all aspects, all of which can be seen below.

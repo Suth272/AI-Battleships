@@ -26,11 +26,6 @@ class Boards:
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
-
-class Ships:
-  """
-  This class handles the placement of the ships by the computer, handles the user's inputs on their chosen co-ordinates, as well as counting the number of ships that were hit.
-  """
   def __init__(self, board):
     self.board = board
 
@@ -82,18 +77,18 @@ def PlayGame():
   """ 
   computer_board = Boards([[" "] * 5 for i in range(5)])
   user_board = Boards([[" "] * 5 for i in range(5)])
-  Ships.create_ships(computer_board)
+  Boards.create_ships(computer_board)
   turns = 10
   while turns > 0:
     Boards.print_board(user_board)
-    user_x, user_y = Ships.user_input(object)
+    user_x, user_y = Boards.user_input(object)
     
     """
     Grid checking and changing/appending.
     """  
     while user_board.board[user_x][user_y] == "O" or user_board.board[user_x][user_y] == "X":
       print("You have guessed this co-ordinate already.")
-      user_x, user_y = Ships.user_input(object)
+      user_x, user_y = Boards.user_input(object)
     if computer_board.board[user_x][user_y] == "X":
       print("Direct hit! Enemy battleship sunk!")
       user_board.board[user_x][user_y] = "X"
@@ -104,7 +99,7 @@ def PlayGame():
     """
     Checking for win and lose conditons.
     """
-    if Ships.count_hits(user_board) == 5:
+    if Boards.count_hits(user_board) == 5:
       print("You hit all 5 battleships! You win!")
       break
     elif turns == 0:
