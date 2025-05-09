@@ -45,6 +45,7 @@ If the guess misses, the co-ordinate that the player guessed will be marked with
      - You must enter a number for the row
      - You must enter a letter for the column
      - You cannot enter the same guess twice
+     - You cannot give an blank/empty input
 
 ## Future Features
 - Allow the computer to fire back against the player and for the player to pick where to place their ships in the grid.
@@ -63,19 +64,19 @@ This site has been tested in all aspects, all of which can be seen below.
 This section shows the successful tests from the appropiate code validators.
 
 ### Python Validation
-No errors or warnings were returned when passing the Python validation test, apart from formatting errors. It should be noted that that a double space indentation was used instead a 4 space indentation, as it prevented the code from running properly.
+No errors or warnings were returned when passing the Python validation test.
 
 The Pythonn validator that was used can be found [here](https://pep8ci.herokuapp.com/).
 
-![image](https://github.com/Suth272/AI-Battleships/assets/159195438/b34b4fa6-9d0d-4a91-80ec-df42c12a434e)
+![Image](https://github.com/user-attachments/assets/a14c295f-e074-491e-add5-303d5ab1a7ff)
 
 ## Manual Testing
 I have manually tested this project by doing the following:
-- [x] Given inalid inputs - strings when numbers were expected and vice versa, out of bounds inputs, repeating the same inputs
-- [X] Tested it in my local terminal and the Code Institure Heroku terminal
+- [x] Given invalid inputs - Inputting strings when numbers were expected and vice versa, out of bounds inputs, repeating the same inputs and empty inputs return the appropiate error to the user, without crashing the application.
+- [X] Tested the application of all its features and functions in both my local terminal and the Code Institute Heroku terminal
 
 ## Defect Tracking
-While coding the website, defects have occured throughout the build, which I have fixed as the project progressed. All the defects have been recorded in GitHub Issues. They can also be seen in the screenshots below.
+While coding the website, defects have occured throughout the build, which I have fixed as the project progressed. All the defects have been recorded in GitHub Issues. They can also be seen in the screenshots below. (Please note that issue 4 on the github issue tracker is used as an image library for the README file, hence a jump in issue number on the images).
 
 ### Issue 1:
 ![image](https://github.com/Suth272/AI-Battleships/assets/159195438/3ea7f6c5-6b1d-4ee2-9570-78edacf76f7b)
@@ -85,6 +86,12 @@ While coding the website, defects have occured throughout the build, which I hav
 
 ### Issue 3:
 ![image](https://github.com/Suth272/AI-Battleships/assets/159195438/73180108-dc3b-440a-a0f1-d3b66f79a305)
+
+### Issue 4:
+![Image](https://github.com/user-attachments/assets/78c2d55e-63f3-4cae-b164-3ffc766e1a88)
+
+### Issue 5
+![Image](https://github.com/user-attachments/assets/0fa0e310-8cbb-4ebc-8b9a-b8df3666d2e5)
 
 ## Outstanding Defects
 There are no outstanding defects in the code/site.
