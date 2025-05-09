@@ -43,19 +43,22 @@ class Boards:
 
     def user_input(self):
         """
-        Gets the user's input of their desired row and column of the ship, and provides user friendly error messages to prevent crashes.
+        Gets the user's input of their desired row and column of the ship,
+        and provides user friendly error messages to prevent crashes.
         """
         try:
             x = input("Enter the row of the ship: ")
             while x not in '12345':
                 print(
-                    'Not an appropriate choice, please select a valid row between 1 and 5.')
+                    'Not an appropriate choice, please select a valid row '
+                    'between 1 and 5.')
                 x = input("Enter the row of the ship: ")
 
             y = input("Enter the column letter of the ship: ").upper()
             while y not in "ABCDE":
                 print(
-                    'Not an appropriate choice, please select a valid column from A, B, C, D or E.')
+                    'Not an appropriate choice, please select a valid column '
+                    'from A, B, C, D or E.')
                 y = input("Enter the column letter of the ship: ").upper()
             return int(x) - 1, Boards.translate_letters_to_numbers()[y]
         except ValueError and KeyError:
@@ -89,7 +92,8 @@ def PlayGame():
         """
     Grid checking and changing/appending.
     """
-        while user_board.board[user_x][user_y] == "O" or user_board.board[user_x][user_y] == "X":
+        while (user_board.board[user_x][user_y] == "O"
+               or user_board.board[user_x][user_y] == "X"):
             print("You have guessed this co-ordinate already.")
             user_x, user_y = Boards.user_input(object)
         if computer_board.board[user_x][user_y] == "X":
