@@ -46,12 +46,14 @@ class Boards:
         try:
             x = input("Enter the row of the ship: ").strip()
 
+            # Empty Row input error handling
             while not x:
                 print(
                     'Error: No input entered. Please enter a row number '
                     'between 1 and 5.')
                 x = input("Enter the row of the ship (1-5): ").strip()
 
+            # Out of range row input error handling
             while x not in '12345':
                 print(
                     'Error: Not an appropriate choice, please select a '
@@ -61,6 +63,7 @@ class Boards:
 
             y = input("Enter the column letter of the ship: ").strip().upper()
 
+            # Empty column input error handling
             while not y:
                 print(
                     "Error: No input entered. Please enter a column letter "
@@ -69,6 +72,7 @@ class Boards:
                     "Enter the column letter of the ship (A-E): "
                     ).strip().upper()
 
+            # Out of range row column error handling
             while y not in "ABCDE":
                 print(
                     'Error: Not an appropriate choice, please select a '
