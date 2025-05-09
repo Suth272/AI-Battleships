@@ -125,18 +125,18 @@ def play_game():
             user_board.board[user_x][user_y] = "O"
 
         """
-    Checking for win and lose conditons.
-    """
-        if Boards.count_hits(user_board) == 5:
+        Chceking for win/loss conditions, before reducing turns.
+        """
+        if user_board.count_hits() == 5:
             print("You hit all 5 battleships! You win!")
             break
-        elif turns == 0:
-            print("You ran out of shells(turns). You lost!")
+        elif turns == 1:
+            print("You ran out of shells. You lost!")
             Boards.print_board(user_board)
             break
-        else:
-            turns -= 1
-            print(f"You have {turns} turns remaining.")
+
+        turns -= 1
+        print(f"You have {turns} turns remaining.")
 
 
 play_game()
