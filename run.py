@@ -27,9 +27,6 @@ class Boards:
             print("%d|%s|" % (row_number, "|".join(row)))
             row_number += 1
 
-    def __init__(self, board):
-        self.board = board
-
     def create_ships(self):
         """
         Creates 5 random ships for the Computer board.
@@ -81,8 +78,8 @@ class Boards:
                     "Enter the column letter of the ship: "
                     ).strip().upper()
             return int(x) - 1, Boards.translate_letters_to_numbers()[y]
-        except ValueError and KeyError:
-            print("Inalid input")
+        except (ValueError, KeyError):
+            print("Invalid input")
             return self.user_input()
 
     def count_hits(self):
@@ -97,7 +94,7 @@ class Boards:
         return hit_ships
 
 
-def PlayGame():
+def play_game():
     """
     This function starts and loops the game till the user runs out of turns.
     """
@@ -138,4 +135,4 @@ def PlayGame():
             print(f"You have {turns} turns remaining.")
 
 
-PlayGame()
+play_game()
