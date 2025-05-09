@@ -48,19 +48,30 @@ class Boards:
         """
         try:
             x = input("Enter the row of the ship: ")
+
+            while not x:
+                print('Error: No input entered. Please enter a row number between 1 and 5.')
+                x = input("Enter the row of the ship (1-5): ")
+
             while x not in '12345':
                 print(
-                    'Not an appropriate choice, please select a valid row '
+                    'Error: Not an appropriate choice, please select a valid row '
                     'between 1 and 5.')
                 x = input("Enter the row of the ship: ")
 
             y = input("Enter the column letter of the ship: ").upper()
+
+            while not y:
+                print("Error: No input entered. Please enter a column letter from A to E.")
+                y = input("Enter the column letter of the ship (A-E): ").strip().upper()
+
             while y not in "ABCDE":
                 print(
-                    'Not an appropriate choice, please select a valid column '
+                    'Error: Not an appropriate choice, please select a valid column '
                     'from A, B, C, D or E.')
                 y = input("Enter the column letter of the ship: ").upper()
             return int(x) - 1, Boards.translate_letters_to_numbers()[y]
+        
         except ValueError and KeyError:
             print("Inalid input")
             return self.user_input()
