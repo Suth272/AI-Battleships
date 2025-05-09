@@ -47,19 +47,19 @@ class Boards:
         and provides user friendly error messages to prevent crashes.
         """
         try:
-            x = input("Enter the row of the ship: ")
+            x = input("Enter the row of the ship: ").strip()
 
             while not x:
                 print('Error: No input entered. Please enter a row number between 1 and 5.')
-                x = input("Enter the row of the ship (1-5): ")
+                x = input("Enter the row of the ship (1-5): ").strip()
 
             while x not in '12345':
                 print(
                     'Error: Not an appropriate choice, please select a valid row '
                     'between 1 and 5.')
-                x = input("Enter the row of the ship: ")
+                x = input("Enter the row of the ship: ").strip()
 
-            y = input("Enter the column letter of the ship: ").upper()
+            y = input("Enter the column letter of the ship: ").strip().upper()
 
             while not y:
                 print("Error: No input entered. Please enter a column letter from A to E.")
@@ -69,7 +69,7 @@ class Boards:
                 print(
                     'Error: Not an appropriate choice, please select a valid column '
                     'from A, B, C, D or E.')
-                y = input("Enter the column letter of the ship: ").upper()
+                y = input("Enter the column letter of the ship: ").strip().upper()
             return int(x) - 1, Boards.translate_letters_to_numbers()[y]
         
         except ValueError and KeyError:
