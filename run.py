@@ -54,7 +54,7 @@ class Boards:
                 x = input("Enter the row of the ship (1-5): ").strip()
 
             # Out of range row input error handling
-            while x not in '12345':
+            while x not in ('1', '2', '3', '4', '5'):
                 print(
                     'Error: Not an appropriate choice, please select a '
                     'valid row between 1 and 5.'
@@ -73,7 +73,7 @@ class Boards:
                     ).strip().upper()
 
             # Out of range row column error handling
-            while y not in "ABCDE":
+            while y not in ("A", "B", "C", "D", "E"):
                 print(
                     'Error: Not an appropriate choice, please select a '
                     'valid column from A, B, C, D or E.'
