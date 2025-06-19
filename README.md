@@ -73,7 +73,13 @@ The Pythonn validator that was used can be found [here](https://pep8ci.herokuapp
 ## Manual Testing
 I have manually tested this project by doing the following:
 - [x] Given invalid inputs - Inputting strings when numbers were expected and vice versa, out of bounds inputs, repeating the same inputs and empty inputs return the appropiate error to the user, without crashing the application.
-- [X] Tested the application of all its features and functions in both my local terminal and the Code Institute Heroku terminal
+- [x] Tested the error handling of the application - Purposely provided invalid inputs and successfully recieved an error handling message that clearly tells the user on how to provide a valid input.
+- [x] Tested the computer created targets for the user to try to hit - Adjusted the code to create a smaller board, so it would be easier to hit the target and see if the computer actually made targets.
+- [x] Tested for hit and miss messages, as well as counter - Provided multiple valid inputs to see if the target was hit or not on the board, which was shown on the board by an X or O respectively. The application successfully returned a hit or miss message and provided the updated number of remaining turns as the counter every time.
+- [x] Tested to see if win/loss message appeared at end of the game:
+     + Tested the loss message by providing random valid inputs until the number of turns ran out. The application successfully displayed a loss messager everytime.
+     + Tested the win message by adjusting the code to have the number of turns equal the number of spaces on the board. Valid inputs were then provided until the board was filled, which would mean all ships would have been hit. The application would return a successful win message everytime. I also tested it when the number of turns exceeded the nhumber of spaces on the board and the outcome was the same.
+
 
 ## Defect Tracking
 While coding the website, defects have occured throughout the build, which I have fixed as the project progressed. All the defects have been recorded in GitHub Issues. They can also be seen in the screenshots below. (Please note that issue 4 on the github issue tracker is used as an image library for the README file, hence a jump in issue number on the images).
@@ -92,6 +98,9 @@ While coding the website, defects have occured throughout the build, which I hav
 
 ### Issue 5
 ![Image](https://github.com/user-attachments/assets/0fa0e310-8cbb-4ebc-8b9a-b8df3666d2e5)
+
+### Issue 6
+![Image](https://github.com/user-attachments/assets/6797d666-d37d-441e-bd77-e7914d731bb2)
 
 ## Outstanding Defects
 There are no outstanding defects in the code/site.
